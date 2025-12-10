@@ -16,23 +16,6 @@ try {
   console.log("err", err);
 }
 
-// app.post("/add-user", async (req, res) => {
-//   try {
-//     const { username, email } = req.body;
-
-//     await my_db.execute("INSERT INTO users (username, email) VALUES (?, ?)", [
-//       username,
-//       email,
-//     ]);
-
-//     const [rows] = await my_db.execute("SELECT * FROM users");
-
-//     return res.status(200).json({ users: rows });
-//   } catch (err) {
-//     console.log("Error:", err);
-//     return res.status(500).json({ message: "Internal Server Error" });
-//   }
-// });
 
 app.use(router)
 
