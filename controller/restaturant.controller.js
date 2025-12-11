@@ -9,7 +9,7 @@ export const addNewRestaurant = async (req, res) => {
         .json({ success: false, message: "Please mention all the fields" });
 
     const [rows] = await my_db.execute(
-      `INSERT INTO RESTAURANT(restaurantName, city, dishName, dishPrice, orderCount) VALUES(?,?,?,?,?)`,
+      `INSERT INTO restaurant(restaurantName, city, dishName, dishPrice, orderCount) VALUES(?,?,?,?,?)`,
       [restuarantName, city, dishName, dishPrice, orderCount]
     );
 
@@ -32,7 +32,7 @@ export const getRestaurant = async (req, res) => {
     console.log(dishName,'dis')
 
     const [result] = await my_db.execute(
-      `SELECT * FROM RESTAURANT WHERE dishName =? AND dishPrice BETWEEN ? AND ?`,[dishName,minPrice,maxPrice]
+      `SELECT * FROM restaurant WHERE dishName =? AND dishPrice BETWEEN ? AND ?`,[dishName,minPrice,maxPrice]
     );
 
     return res
